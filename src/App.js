@@ -47,5 +47,3 @@ class App extends React.Component {
 }
 
 export default App;
-// github
-// mise en ligne
