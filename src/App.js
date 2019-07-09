@@ -1,26 +1,11 @@
 import React from "react";
 import "./App.css";
 
-function handlClick(e) {
-  console.log(e.target.alt);
-
-  // preview: "190704-IMG_20190704_170811"
-
-  // this.setState = {
-  //   imgs: [
-  //     "190704-IMG_20190704_170811",
-  //     "190704-IMG_20190704_170821",
-  //     "190704-IMG_20190704_170904"
-  //   ],
-  // }
-}
-
 const Thumb = props => {
   return (
     <img
-      // onClick={handlClick(e)}
       onClick={e => {
-        handlClick(e);
+        props.handlClick(e);
       }}
       className="thumb"
       src={process.env.PUBLIC_URL + `/img/104x58_${props.imgName}.jpg`}
@@ -39,11 +24,17 @@ class App extends React.Component {
     imgs: this.imgs,
     preview: this.imgs[0]
   };
+
+  handlClick = e => {
+    this.setState({ preview: e.target.alt });
+  };
   render() {
     const thumbs = [];
 
     this.state.imgs.forEach((img, index) => {
-      thumbs.push(<Thumb key={index} imgName={img} />);
+      thumbs.push(
+        <Thumb handlClick={this.handlClick} key={index} imgName={img} />
+      );
     });
 
     const imgPath = `/img/360x202_${this.state.preview}.jpg`;
@@ -75,7 +66,6 @@ class App extends React.Component {
 
 export default App;
 
-// au click affiche l'image dans preview
-
 // ajouter une croix qui display none la preview
 // changer css preview pour faire une pop up
+// refacto
