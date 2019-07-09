@@ -7,18 +7,41 @@ h1 {
 }
 iframe {
   display: block;
+  width: 320px;
+  height: 180px;
   margin: auto;
   border: none;
 }
 .preview {
+  position: sticky;
+  top: 0;
+  max-width: 360px;
   height: 202px;
   margin: 0 auto 20px;
   background-color: lightblue;
 }
 .thumbs {
+  display: flex;
   max-width: 320px;
   margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .thumb {
   margin: 1px;
+}
+@media screen and (min-width: 768px) {
+  .App {
+    max-width: 90%;
+  }
+  iframe {
+    width: 560px;
+    height: 315px;
+  }
+  h2 {
+    text-align: center;
+  }
+  .thumbs {
+    max-width: 90%;
+  }
 }
