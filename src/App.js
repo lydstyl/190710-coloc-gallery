@@ -27,13 +27,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Colocation</h1>
-        <h2>Playlist</h2>
+        <h2>Vidéos</h2>
         <iframe
           title="videos"
           src="https://www.youtube.com/embed/videoseries?list=PLo2PSuBYZiOp-ZYVeHlXhg-eWEoZUz6Re"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         />
-        <h2>Gallery</h2>
+        <h2>Photos</h2>
         <div
           className="preview"
           style={{
